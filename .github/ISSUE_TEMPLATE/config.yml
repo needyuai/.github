@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🔒 Reportar vulnerabilidade de segurança
+    url: mailto:security@trustyu.ai
+    about: Não abra issue pública. Envie e-mail para security@trustyu.ai. Veja SECURITY.md.
+  - name: 💼 Contato comercial / parcerias
+    url: mailto:contato@trustyu.ai
+    about: Para conversas comerciais, parcerias ou indicações.
+  - name: 📘 Playbook Tech Human
+    url: https://playbook.techhuman.com.br
+    about: Entenda o ecossistema, as ofertas e os donos canônicos antes de abrir uma issue.
+  - name: 📚 Docs
+    url: https://docs.techhuman.com.br
+    about: Documentação canônica do ecossistema.

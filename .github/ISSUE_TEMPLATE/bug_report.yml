@@ -1,0 +1,72 @@
+name: 🐛 Bug report
+description: Reportar um comportamento inesperado em um repositório público desta organização
+title: "[bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por dedicar tempo para reportar um bug.
+
+        ⚠️ **Não use este template para vulnerabilidades de segurança.** Veja [SECURITY.md](https://github.com/needyuai/.github/blob/main/SECURITY.md) e envie um e-mail para `security@trustyu.ai`.
+
+  - type: input
+    id: repo
+    attributes:
+      label: Repositório afetado
+      description: Em qual repo deste workspace o problema aconteceu?
+      placeholder: "ex.: trustyu-jarvis-site"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: O que aconteceu?
+      description: Descreva o comportamento observado.
+      placeholder: "Quando faço X, acontece Y."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: O que era esperado?
+      placeholder: "Eu esperava que acontecesse Z."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Como reproduzir
+      description: Passos para que outra pessoa consiga reproduzir o problema.
+      placeholder: |
+        1. Vá para...
+        2. Clique em...
+        3. Veja o erro...
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Ambiente
+      description: SO, navegador/versão, versão do produto se aplicável.
+      placeholder: "macOS 14, Chrome 125, versão x.y.z"
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Contexto adicional
+      description: Logs, prints, links relacionados — qualquer coisa que ajude.
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmações
+      options:
+        - label: "Li o [Código de Conduta](https://github.com/needyuai/.github/blob/main/CODE_OF_CONDUCT.md) e concordo em segui-lo"
+          required: true
+        - label: "Confirmo que este **não é** um problema de segurança (caso seja, vou usar `security@trustyu.ai`)"
+          required: true

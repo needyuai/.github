@@ -1,0 +1,58 @@
+name: ✨ Feature request
+description: Sugerir uma melhoria ou nova funcionalidade
+title: "[feat]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por contribuir com ideias.
+
+        Antes de seguir, dê uma olhada no [Playbook Tech Human](https://playbook.techhuman.com.br) para entender a arquitetura do ecossistema e o lugar do produto que você quer ver evoluir.
+
+  - type: input
+    id: repo
+    attributes:
+      label: Repositório alvo
+      description: Em qual repo deste workspace a feature se encaixa?
+      placeholder: "ex.: trustyu-jarvis-site"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Qual problema essa feature resolve?
+      description: Descreva a dor real, não a solução. Quem é afetado e como.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposta
+      description: Descreva a solução que você imagina.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas consideradas
+      description: Outras formas de resolver o mesmo problema que você pensou.
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Contexto adicional
+      description: Links, prints, casos de uso, qualquer coisa que ajude a entender.
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmações
+      options:
+        - label: "Li o [Código de Conduta](https://github.com/needyuai/.github/blob/main/CODE_OF_CONDUCT.md) e concordo em segui-lo"
+          required: true
+        - label: "Verifiquei que não existe issue ou PR aberto com a mesma proposta"
+          required: true
