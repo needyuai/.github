@@ -9,7 +9,7 @@
 
 [![Playbook](https://img.shields.io/badge/Playbook-techhuman.com.br-D8FF57?style=flat-square&labelColor=2A2B2D)](https://playbook.techhuman.com.br)
 [![Docs](https://img.shields.io/badge/Docs-docs.techhuman.com.br-D8FF57?style=flat-square&labelColor=2A2B2D)](https://docs.techhuman.com.br)
-[![JARVIS](https://img.shields.io/badge/JARVIS-jarvis.trustyu.ai-D8FF57?style=flat-square&labelColor=2A2B2D)](https://jarvis.trustyu.ai)
+[![Trustyu Forge](https://img.shields.io/badge/Trustyu_Forge-forge.trustyu.ai-D8FF57?style=flat-square&labelColor=2A2B2D)](https://forge.trustyu.ai)
 
 </div>
 
@@ -22,7 +22,7 @@ Três marcas, **uma arquitetura de negócio**:
 | Marca | Papel | Onde aparece |
 |---|---|---|
 | 🟢 **Tech Human** | Porta comercial — diagnóstico, liderança técnica e squads especialistas | [techhuman.com.br](https://techhuman.com.br) · [LinkedIn](https://linkedin.com/company/techhumanbr) |
-| 🟢 **Trustyu.ai** | Ativos — SaaS de IA, método JARVIS, Trust Score, Forge | [trustyu.ai](https://trustyu.ai) · [LinkedIn](https://linkedin.com/company/trustyu/) |
+| 🟢 **Trustyu.ai** | Ativos — SaaS de IA, Trustyu Forge, Trust Score | [trustyu.ai](https://trustyu.ai) · [LinkedIn](https://linkedin.com/company/trustyu/) |
 | 🟢 **NeedyU.ai** | Memória operacional — copilot e mentor para reuniões e melhoria contínua | [needyu.ai](https://needyu.ai) · [LinkedIn](https://linkedin.com/company/needyu/) |
 
 > A arquitetura completa, com donos canônicos, jornadas e camadas de conteúdo, vive no **[Playbook Tech Human](https://playbook.techhuman.com.br)**.
@@ -53,7 +53,7 @@ Três marcas, **uma arquitetura de negócio**:
             └────────────────────────┼────────────────────────┘
                                      ▼
                           ┌─────────────────────┐
-                          │  TH Build + JARVIS  │  ← execução
+                          │  TH Build + Forge   │  ← execução
                           └──────────┬──────────┘
                                      │
                 ┌────────────────────┼────────────────────┐
@@ -78,7 +78,7 @@ Três marcas, **uma arquitetura de negócio**:
 Construímos **SaaS de IA vertical**, **agentes operacionais** e **copilots** com método próprio: AI-first, multi-tenant, observável e responsável por design.
 
 - **IA · SaaS · Agentes** — produtos verticais que resolvem dor real de mercado
-- **Método JARVIS** — framework de lançamento em 6 fases (público em [jarvis.trustyu.ai](https://jarvis.trustyu.ai))
+- **Trustyu Forge** — framework de lançamento em 6 fases (público em [forge.trustyu.ai](https://forge.trustyu.ai))
 - **Trust Score** — auditoria autônoma de sistemas criados com IA
 - **NeedyU.ai** — memória operacional para reuniões e decisões
 
