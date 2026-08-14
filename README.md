@@ -15,6 +15,7 @@ Este repositório guarda a **configuração compartilhada** e os **arquivos de c
 | [`CONTRIBUTING.md`](./CONTRIBUTING.md) | Como contribuir nos repositórios públicos |
 | [`.github/ISSUE_TEMPLATE/`](./.github/ISSUE_TEMPLATE/) | Templates de bug report e feature request (fallback de toda a org) |
 | [`.github/PULL_REQUEST_TEMPLATE.md`](./.github/PULL_REQUEST_TEMPLATE.md) | Template de PR (fallback de toda a org) |
+| [`.WORK_IN_PROGRESS.md`](./.WORK_IN_PROGRESS.md) | Lockfile leve (D5) — trabalho em voo neste repo; leia antes de começar |
 
 ## Como o GitHub usa esses arquivos
 
