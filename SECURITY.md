@@ -43,4 +43,4 @@ IA responsável por design, dados tratados com ética, humano no loop do dado à
 
 ---
 
-*Última atualização: 2026-05*
+*Última atualização: 2026-08*

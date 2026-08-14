@@ -38,7 +38,7 @@ Somos um **AI-native company builder**. Construímos SaaS verticais, agentes de 
 | **[Tech Human](https://www.techhuman.com.br)** | Diagnóstico, estratégia, CTO/CPO as a Service, dados, IA aplicada e squads especialistas | Quando a operação trava antes da tecnologia ou falta direção para executar |
 | **[Trustyu.ai](https://www.trustyu.ai)** | AI squads, produtos de IA, Vertical SaaS e co-building com fundadores e empresas | Quando existe uma visão ou domínio forte que precisa virar software e outcome |
 | **[NeedyU.ai](https://www.techhuman.com.br/cases/needyu-ai)** | Copiloto de produtividade, reuniões e conhecimento operacional | Quando informação dispersa precisa virar memória, insight e ação |
-| **[FORGE](https://forge.trustyu.ai)** | Framework proprietário de lançamento e engineering harness | Quando velocidade precisa coexistir com segurança, controle e evidência |
+| **[FORGE](https://forge.trustyu.ai)** | Framework proprietário de lançamento e engineering harness, com benchmark técnico e evidência públicos | Quando velocidade precisa coexistir com segurança, controle e evidência |
 
 ---
 
@@ -76,7 +76,7 @@ O ciclo é simples de explicar e rigoroso de executar: entender o problema, redu
 
 | Camada | Capacidade |
 |---|---|
-| **FORGE 3.0** | Seis fases, controles versionados, execução isolada, verificação independente, evidência e aprendizado contínuo |
+| **FORGE 3.1** | Seis fases, controles versionados, execução isolada, verificação independente, evidência e aprendizado contínuo. Estado público declarado: **Specified/Shadow** — os contratos existem e são inspecionáveis; enforcement de frota e operação continuam fora do que afirmamos |
 | **Product Foundation** | Multi-tenancy, identidade, billing, internacionalização, observabilidade, CI/CD, segurança e golden paths reutilizáveis |
 | **Hub Agents** | Agentes por domínio, RAG, múltiplos provedores de LLM, canais plugáveis, workers assíncronos e observabilidade |
 | **Human + AI Squad** | Responsabilidade humana, papéis especialistas, agentes executores e verificadores independentes no mesmo fluxo |
@@ -106,7 +106,7 @@ Hoje, conceitos como **Meddus**, **Advogus**, **Insurus**, **Imobly** e **Constr
 - **Segurança e privacidade por design** — least privilege, isolamento e minimização de dados desde a arquitetura.
 - **Aprendizado que vira sistema** — falhas e reviews retornam como teste, controle, eval ou melhoria reutilizável.
 
-É assim que buscamos velocidade sem transformar confiança em promessa de marketing.
+É assim que buscamos velocidade sem transformar confiança em promessa de marketing. **Nada disso é afirmado sem lastro:** o benchmark técnico em [forge.trustyu.ai](https://forge.trustyu.ai/benchmark/) publica as dezessete capacidades com a evidência e o resíduo de cada uma, e declara explicitamente o que ainda **não** podemos afirmar.
 
 ---
 
@@ -129,8 +129,18 @@ Grande parte do nosso código é privada porque contém propriedade intelectual 
 
 Hoje você pode explorar:
 
-- **[FORGE — site público](https://github.com/needyuai/trustyu-jarvis-site)** — visão pública do framework e da tese de engenharia.
+- **[FORGE — site público](https://github.com/needyuai/trustyu-jarvis-site)** — código do site que publica o framework, o benchmark e a evidência.
 - **[Configuração da organização](https://github.com/needyuai/.github)** — arquivos de comunidade, contribuição e segurança.
+
+E em [**forge.trustyu.ai**](https://forge.trustyu.ai), o que sustenta o que afirmamos:
+
+| O quê | Para quê |
+|---|---|
+| [**Benchmark técnico**](https://forge.trustyu.ai/benchmark/) | Dezessete capacidades com maturidade, evidência e resíduo — mais o corte histórico preservado, sem reescrita |
+| [**Registro de release**](https://forge.trustyu.ai/releases/forge-3.1-rc/) | Qualificação declarada, artefatos de fundação e os gates que faltam para GA |
+| [**Evidence packs**](https://forge.trustyu.ai/references/#fontes) | Quarenta fontes com snapshot, hash e licença; nenhum claim público sem origem rastreável |
+| [**Artigos**](https://forge.trustyu.ai/artigos/) | Conhecimento técnico e de negócio com autoria, revisão factual e fontes declaradas |
+| [**Contratos machine-readable**](https://forge.trustyu.ai/benchmark/forge-31-current-v1.json) | O mesmo corte em JSON, para quem quiser auditar por máquina |
 
 Antes de contribuir, leia o **[guia de contribuição](https://github.com/needyuai/.github/blob/main/CONTRIBUTING.md)** e o **[Código de Conduta](https://github.com/needyuai/.github/blob/main/CODE_OF_CONDUCT.md)**. Vulnerabilidades nunca devem ser abertas em issues públicas: siga a nossa **[Política de Segurança](https://github.com/needyuai/.github/security/policy)**.
 
@@ -159,4 +169,4 @@ Construímos tecnologia para ampliar capacidade humana — com responsabilidade,
 
 </div>
 
-<!-- Revisão editorial e factual: 2026-07-14 -->
+<!-- Revisão editorial e factual: 2026-08-13 -->

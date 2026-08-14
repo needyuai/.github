@@ -19,6 +19,7 @@ A maioria dos nossos repositórios é **privada** — propriedade intelectual de
 3. **Commits** — mensagens claras, no imperativo, em português ou inglês
 4. **Testes** — se o repositório tem suíte de testes, garanta que tudo passe
 5. **Abra o PR** — referencie a issue (`Closes #123`), descreva o que foi feito e por quê
+6. **Se um agente de IA escreveu o código**, declare a origem no rodapé do PR (`🤖 Generated with <ferramenta>`). Não é burocracia: é o que permite auditar depois quem produziu o quê, e nos nossos repositórios um gate bloqueante verifica isso
 
 ## Padrões
 

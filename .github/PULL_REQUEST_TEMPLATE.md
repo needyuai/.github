@@ -26,3 +26,14 @@
 ## Notas para o revisor
 
 <!-- Decisões de design, trade-offs, áreas que merecem atenção especial. -->
+
+---
+
+<!--
+Rodapé de origem — OBRIGATÓRIO em PR aberto por agente codificador (protocolo D3).
+Um gate bloqueante verifica a presença dele nos repositórios da frota.
+PR aberto por humano diretamente não precisa de rodapé: apague este bloco.
+
+🤖 Generated with Claude
+🤖 Generated with Codex
+-->
