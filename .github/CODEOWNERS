@@ -1,0 +1,18 @@
+# CODEOWNERS — integridade do controle
+#
+# Os apps de geração de código (`claude`, `chatgpt-codex-connector`, `continue`) têm
+# `workflows: write` em todos os repositórios. Sem um humano obrigatório no caminho, um
+# agente pode reescrever o próprio CI que o audita.
+#
+# Dono = pessoas, não time: `trustyu-client-data` tem um único membro, então apontar para
+# o time não produziria revisor diferente do autor. `.github` não tem time por ser faixa
+# `org_public`. Ambos os owners alcançam estes repositórios.
+#
+# ATENÇÃO: este arquivo sozinho NÃO bloqueia. `require_code_owner_review` é inócuo com
+# `required_approving_review_count: 0` — verificado em 2026-08-28 (needyuai/trustyu-docs
+# PRs #579/#580 terminaram no mesmo estado `CLEAN`). Quem bloqueia é o status check
+# `CI integrity gate`, obrigatório no ruleset.
+#
+# Ref: ADR-0067 · trustyu-docs/docs/governance/security-posture-review-2026-08.md §3.7
+
+/.github/     @fernandoparreiras @samuelcardoso
