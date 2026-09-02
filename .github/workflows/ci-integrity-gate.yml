@@ -1,28 +1,13 @@
-# Gate de integridade do controle — exige revisão humana em mudança de CI/governança.
+# Gate de integridade do controle — caller.
 #
-# POR QUE ESTE WORKFLOW EXISTE, e não um CODEOWNERS:
-#   `require_code_owner_review: true` é INÓCUO quando `required_approving_review_count: 0`
-#   — verificado empiricamente em 2026-08-28 (PRs #579/#580: um tocando `.github/` e outro
-#   não terminaram no MESMO estado `CLEAN`). A contagem é o que arma o requisito de review;
-#   o code-owner apenas qualifica quem o satisfaz. Com zero, não há requisito a qualificar.
-#   Subir a contagem para 1 resolveria, mas travaria TODO PR numa org de duas pessoas.
+# A lógica vive na composite action `trustyu-infra/.github/actions/ci-integrity-gate`.
+# NÃO edite regra aqui: edite a action, e todos os consumidores herdam.
 #
-#   `file_path_restriction` em ruleset resolveria direto, mas é Enterprise (testado: 422).
+# O NOME DO JOB É CONTRATO. Ele vira o nome do status check exigido pelo ruleset
+# (`Revisão humana em CI e governança`). Renomear quebra o `required_status_checks` —
+# o PR passa a ficar BLOCKED com tudo verde, padrão `gate-morto` que o auditor detecta.
 #
-#   Este gate é o equivalente disponível no plano Team: um status check que só reprova
-#   quando o PR toca caminho sensível e ninguém além do autor aprovou.
-#
-# CONTRA O QUÊ ELE PROTEGE:
-#   Os apps de codegen têm `workflows: write` em todos os repositórios — podem reescrever
-#   o próprio CI que os audita. O controle que audita não pode ser modificável por quem
-#   ele audita sem um humano no caminho.
-#
-# POR QUE ELE RODA SEMPRE (sem filtro `paths:`):
-#   Um check `required` que não reporta deixa o PR BLOCKED com tudo verde — é o padrão
-#   `gate-morto` que o próprio auditor detecta. Rodando sempre e decidindo por dentro, o
-#   check sempre reporta: passa direto quando o PR não toca caminho protegido.
-#
-# Ref: ADR-0067 · docs/governance/security-posture-review-2026-08.md §3.7
+# Ref: ADR-0067 · ADR-0081 (I4) · trustyu-docs/docs/governance/security-posture-review-2026-08.md §3.7
 
 name: CI integrity gate
 
@@ -46,53 +31,5 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Exigir aprovação humana quando o PR toca CI ou governança
-        uses: actions/github-script@373c709c69115d41ff229c7e5df9f8788daa9553 # v8
-        with:
-          script: |
-            const PROTEGIDOS = ['.github/'];
-            const pr = context.payload.pull_request;
-
-            const arquivos = await github.paginate(github.rest.pulls.listFiles, {
-              owner: context.repo.owner, repo: context.repo.repo, pull_number: pr.number, per_page: 100,
-            });
-            const tocados = arquivos
-              .map(f => f.filename)
-              .filter(f => PROTEGIDOS.some(p => f.startsWith(p)));
-
-            if (tocados.length === 0) {
-              core.info('PR não toca CI nem governança — gate não se aplica.');
-              return;
-            }
-
-            core.info(`Caminhos protegidos tocados:\n  ${tocados.join('\n  ')}`);
-
-            const reviews = await github.paginate(github.rest.pulls.listReviews, {
-              owner: context.repo.owner, repo: context.repo.repo, pull_number: pr.number, per_page: 100,
-            });
-
-            // Só a ÚLTIMA review de cada pessoa conta: uma aprovação seguida de
-            // "request changes" não pode continuar valendo como aprovação.
-            const ultima = new Map();
-            for (const r of reviews) {
-              if (!r.user || r.state === 'COMMENTED') continue;
-              ultima.set(r.user.login, r);
-            }
-
-            const aprovadores = [...ultima.values()]
-              .filter(r => r.state === 'APPROVED')
-              .map(r => r.user)
-              // O autor não aprova a si mesmo, e um bot não substitui revisão humana:
-              // o risco que este gate cobre é justamente o de automação alterando o CI.
-              .filter(u => u.login !== pr.user.login && u.type !== 'Bot')
-              .map(u => u.login);
-
-            if (aprovadores.length === 0) {
-              core.setFailed(
-                `Este PR altera CI ou governança e precisa da aprovação de um humano que não seja o autor (@${pr.user.login}). ` +
-                `Nenhuma aprovação humana válida encontrada. Caminhos: ${tocados.join(', ')}`
-              );
-              return;
-            }
-
-            core.info(`Aprovado por: ${aprovadores.join(', ')}`);
+      - name: Exigir revisão humana
+        uses: needyuai/trustyu-infra/.github/actions/ci-integrity-gate@ba376e5bfbae7be157d8a5b0c70ec60b40806761
