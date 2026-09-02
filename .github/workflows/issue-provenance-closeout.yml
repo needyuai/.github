@@ -1,0 +1,59 @@
+name: FORGE Issue Provenance & Closeout
+
+# Aplica o ADR-0051 (proveniência e integridade de closeout de issue) chamando o
+# composite canônico do `trustyu-infra`. Uma implementação para a frota — copiar
+# o script para cada repo criaria N cópias divergindo, que é o item 6 do
+# `canon-health-review.md`.
+#
+# POR QUE AQUI, E POR QUE AGORA (trustyu-docs#587):
+#   Medido em 2026-08-31, este repo tinha 100+ issues fechadas em 90 dias com
+#   1,5% de closeout conforme — o maior passivo da frota. O guard existia em 1 de
+#   36 repos, e a comparação controlada (mesma norma, mesma janela) mostrou 87%
+#   de cobertura onde ele roda contra 5,6% onde não roda.
+
+on:
+  issues:
+    # `edited` deliberadamente FORA (FinOps ADR-0027 M16): disparava a cada
+    # edição de corpo, inclusive automatizada. A proveniência é estabelecida na
+    # abertura e conferida no fechamento; reprocessar a cada edição não muda o
+    # veredito.
+    types: [opened, closed]
+  pull_request_target:
+    types: [closed]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+concurrency:
+  group: issue-governance-${{ github.event_name }}-${{ github.event.issue.number || github.event.pull_request.number }}
+
+jobs:
+  govern:
+    if: >-
+      github.event_name == 'issues' ||
+      (github.event_name == 'pull_request_target' && github.event.pull_request.merged == true)
+    runs-on: ubuntu-latest
+    # FinOps ADR-0027 M14.2: sem isto o job herda o teto de 360 min.
+    timeout-minutes: 5
+    steps:
+      # Security invariant: load only the trusted default branch. Never checkout
+      # or execute the pull request head under pull_request_target.
+      - name: Checkout trusted governance code
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+
+      - name: Enforce immutable GitHub Actions references
+        uses: needyuai/trustyu-infra/.github/actions/action-pin-audit@97a4cb1e9ba3d92967aec6b93ce0e5e4f2bff7f6
+
+      # O composite NUNCA executa código da branch do PR: carrega só o script
+      # versionado no `trustyu-infra`, via `github.action_path`, resolvido no SHA
+      # pinado acima. Conteúdo produzido por agente é DADO, jamais comando — é a
+      # invariante que torna seguro rodar sob `pull_request_target`.
+      - name: Apply issue provenance and closeout policy
+        uses: needyuai/trustyu-infra/.github/actions/issue-closeout-guard@620e459245b33e30ee06577757914aa6ca028420
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
