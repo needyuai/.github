@@ -1,13 +1,38 @@
-# Gate de integridade do controle — caller.
+# Gate de integridade do controle — implementação INLINE, e isto é deliberado.
 #
-# A lógica vive na composite action `trustyu-infra/.github/actions/ci-integrity-gate`.
-# NÃO edite regra aqui: edite a action, e todos os consumidores herdam.
+# POR QUE INLINE AQUI, SE A FROTA USA A COMPOSITE: este repositório é PÚBLICO, e
+# repositório público NÃO resolve action hospedada em repositório privado. O
+# `trustyu-infra` é privado; o "accessible from organization" dele alcança repositórios
+# privados e internos da org, não públicos. Não há SHA, allow-list nem permissão que
+# conserte — é a fronteira de visibilidade.
+#
+# O QUE ISSO CAUSOU (medido em 2026-09-02): a migração para a composite (#4) deixou este
+# gate com 4 execuções e ZERO sucessos, falhando em `Set up job` com
+# `Unable to resolve action needyuai/trustyu-infra, not found`. Como
+# `Revisão humana em CI e governança` é required check no ruleset `main-protect`, o
+# efeito é que TODO PR para a `main` deste repositório ficava permanentemente bloqueado:
+# o check exigido não conseguia sequer reportar.
+#
+# E o auditor não via, porque `ci-integrity-gate.yml` está em
+# `workflow_liveness.global_paths` — isenção criada para o gate que reprova DE PROPÓSITO
+# quando falta aprovação humana, e que por tabela escondia o gate que não consegue rodar.
+#
+# O `trustyu-jarvis-site`, o outro repositório público da org, nunca migrou e por isso
+# nunca quebrou (7 sucessos em 15 execuções). Este arquivo faz o mesmo, com o script
+# ATUAL da composite — inclusive a reexecução de vereditos obsoletos, que a versão do
+# jarvis-site não tem.
+#
+# AO EDITAR: a fonte de verdade continua sendo a composite
+# `needyuai/trustyu-infra/.github/actions/ci-integrity-gate`. Mudança de regra vai LÁ
+# primeiro; esta cópia é derivada e precisa ser ressincronizada à mão. É dívida
+# consciente — o preço de um repositório público consumir governança privada — e está
+# registrada em trustyu-docs#661.
 #
 # O NOME DO JOB É CONTRATO. Ele vira o nome do status check exigido pelo ruleset
-# (`Revisão humana em CI e governança`). Renomear quebra o `required_status_checks` —
-# o PR passa a ficar BLOCKED com tudo verde, padrão `gate-morto` que o auditor detecta.
+# (`Revisão humana em CI e governança`). Renomear quebra o `required_status_checks` — o
+# PR passa a ficar BLOCKED com tudo verde, padrão `gate-morto` que o auditor detecta.
 #
-# Ref: ADR-0067 · ADR-0081 (I4) · trustyu-docs/docs/governance/security-posture-review-2026-08.md §3.7
+# Ref: ADR-0067 · ADR-0081 (I4) · trustyu-docs#657 · trustyu-docs#661
 
 name: CI integrity gate
 
@@ -31,5 +56,133 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Exigir revisão humana
-        uses: needyuai/trustyu-infra/.github/actions/ci-integrity-gate@ba376e5bfbae7be157d8a5b0c70ec60b40806761
+      - name: Exigir aprovação humana quando o PR toca CI ou governança
+        uses: actions/github-script@373c709c69115d41ff229c7e5df9f8788daa9553
+        with:
+          script: |
+            const PROTEGIDOS = `.github/`
+              .split('\n').map(s => s.trim()).filter(Boolean);
+
+            const pr = context.payload.pull_request;
+            if (!pr) {
+              core.info('Sem pull request no contexto — gate não se aplica.');
+              return;
+            }
+
+            const arquivos = await github.paginate(github.rest.pulls.listFiles, {
+              owner: context.repo.owner, repo: context.repo.repo, pull_number: pr.number, per_page: 100,
+            });
+            const tocados = arquivos
+              .map(f => f.filename)
+              .filter(f => PROTEGIDOS.some(p => f.startsWith(p)));
+
+            if (tocados.length === 0) {
+              core.info('PR não toca CI nem governança — gate não se aplica.');
+              return;
+            }
+
+            core.info(`Caminhos protegidos tocados:\n  ${tocados.join('\n  ')}`);
+
+            const reviews = await github.paginate(github.rest.pulls.listReviews, {
+              owner: context.repo.owner, repo: context.repo.repo, pull_number: pr.number, per_page: 100,
+            });
+
+            // Só a ÚLTIMA review de cada pessoa conta: uma aprovação seguida de
+            // "request changes" não pode continuar valendo como aprovação.
+            const ultima = new Map();
+            for (const r of reviews) {
+              if (!r.user || r.state === 'COMMENTED') continue;
+              ultima.set(r.user.login, r);
+            }
+
+            const aprovadores = [...ultima.values()]
+              .filter(r => r.state === 'APPROVED')
+              .map(r => r.user)
+              // O autor não aprova a si mesmo, e um bot não substitui revisão humana:
+              // o risco que este gate cobre é justamente o de automação alterando o CI.
+              .filter(u => u.login !== pr.user.login && u.type !== 'Bot')
+              .map(u => u.login);
+
+            if (aprovadores.length === 0) {
+              core.setFailed(
+                `Este PR altera CI ou governança e precisa da aprovação de um humano que não seja o autor (@${pr.user.login}). ` +
+                `Nenhuma aprovação humana válida encontrada. Caminhos: ${tocados.join(', ')}`
+              );
+              return;
+            }
+
+            core.info(`Aprovado por: ${aprovadores.join(', ')}`);
+
+            // ─── Reexecução dos vereditos obsoletos ───────────────────────────────
+            //
+            // O PROBLEMA (medido em trustyu-ai-env#191, 2026-09-02): todo PR que toca
+            // caminho protegido nasce com este gate REPROVANDO — corretamente, porque
+            // ainda não há aprovação. Quando a aprovação chega, o evento
+            // `pull_request_review` cria um run NOVO, com um check-run NOVO. O antigo
+            // continua na mesma SHA, com o mesmo nome e a conclusão `failure`:
+            //
+            //   id=100224156004  failure  (run do `pull_request`, antes da aprovação)
+            //   id=100220740653  success  (run do `pull_request_review`, depois)
+            //
+            // A proteção de branch NÃO toma só o mais recente — viu os dois e bloqueou.
+            // Num repo com `enforce_admins: true` isso é deadlock: não há bypass, e o
+            // veredito obsoleto nunca é substituído sozinho.
+            //
+            // POR QUE REEXECUTAR RESOLVE: rerodar ATUALIZA o check-run existente no lugar
+            // (o `started_at` do id antigo muda), enquanto um run novo cria outro.
+            // Verificado à mão duas vezes antes de virar código.
+            //
+            // POR QUE NÃO `checks: write` + PATCH: um token só edita check-run que ele
+            // mesmo criou. Reexecutar delega ao GitHub, que REAVALIA de verdade em vez de
+            // sobrescrever um veredito — se o estado tiver mudado, o resultado reflete.
+            //
+            // BEST-EFFORT POR DESENHO: sem `actions: write` a chamada devolve 403, e o
+            // gate NÃO reprova por isso. Ele já decidiu; falhar aqui transformaria uma
+            // otimização em novo bloqueio, que é o oposto do que esta seção resolve.
+            try {
+              const atual = await github.rest.actions.getWorkflowRun({
+                owner: context.repo.owner, repo: context.repo.repo, run_id: context.runId,
+              });
+              const runs = await github.paginate(github.rest.actions.listWorkflowRuns, {
+                owner: context.repo.owner, repo: context.repo.repo,
+                workflow_id: atual.data.workflow_id, head_sha: pr.head.sha, per_page: 100,
+              });
+              // `cancelled` bloqueia exatamente como `failure`, e é AUTOINFLIGIDO: o
+              // `cancel-in-progress` da concurrency existe para poupar runner e, num job de
+              // ~5s, poupa quase nada — o GitHub fatura 1 minuto mínimo de qualquer forma.
+              // Em troca, fabrica vereditos cancelados que travam o PR. Visto em
+              // trustyu-ai-env#193: dois runs sobrepostos, um cancelou o outro, e o cancelado
+              // ficou bloqueando com todo o resto verde.
+              //
+              // A correção tem duas metades, e esta é a segunda: os chamadores deixam de usar
+              // `cancel-in-progress` (param de CRIAR cancelados) e aqui reexecutamos os que já
+              // existem. Sem a primeira metade, reexecutar um cancelado enquanto o run atual
+              // ainda roda faria o reexecutado CANCELAR o atual — pingue-pongue no mesmo grupo.
+              const obsoletos = runs.filter(r =>
+                r.id !== context.runId && (r.conclusion === 'failure' || r.conclusion === 'cancelled'));
+              if (obsoletos.length === 0) {
+                core.info('Nenhum veredito obsoleto nesta SHA.');
+              } else {
+                for (const r of obsoletos) {
+            // `reRunWorkflowFailedJobs` não alcança run cancelado — ele não tem job "falho".
+            // Para esse caso o correto é reexecutar o run inteiro.
+            if (r.conclusion === 'cancelled') {
+              await github.rest.actions.reRunWorkflow({
+                owner: context.repo.owner, repo: context.repo.repo, run_id: r.id,
+              });
+            } else {
+              await github.rest.actions.reRunWorkflowFailedJobs({
+                owner: context.repo.owner, repo: context.repo.repo, run_id: r.id,
+              });
+            }
+                  core.info(`Reexecutando run obsoleto ${r.id} (${r.event}, ${r.conclusion}) — o check-run dele e atualizado no lugar.`);
+                }
+              }
+            } catch (e) {
+              core.warning(
+                `Nao consegui reexecutar vereditos obsoletos desta SHA: ${e.message}. ` +
+                `O gate PASSOU — isto nao bloqueia o merge. Se o PR seguir BLOCKED com tudo ` +
+                `verde, ha um check-run 'failure' antigo do mesmo nome: rerode aquele run. ` +
+                `Para automatizar, o workflow chamador precisa de 'actions: write'.`
+              );
+            }
