@@ -1,6 +1,6 @@
 # needyuai/.github
 
-Este repositório guarda a **configuração compartilhada** e os **arquivos de community health** da organização [needyuai](https://github.com/needyuai), onde vivem os repositórios do ecossistema **Tech Human · Trustyu.ai · NeedyU.ai**.
+Este repositório guarda a **configuração compartilhada** e os **arquivos de community health** da organização [needyuai](https://github.com/needyuai), onde vivem os repositórios do ecossistema **Tech Human · Trustyu.ai · NEEDYU.ai**.
 
 > 👉 Se você caiu aqui procurando o que fazemos, vá para [github.com/needyuai](https://github.com/needyuai) — a página inicial da organização tem a narrativa completa.
 
@@ -9,7 +9,7 @@ Este repositório guarda a **configuração compartilhada** e os **arquivos de c
 | Arquivo | Para que serve |
 |---|---|
 | [`profile/README.md`](./profile/README.md) | Home da organização (renderizada em [github.com/needyuai](https://github.com/needyuai)) |
-| [`profile/assets/`](./profile/assets/) | Assets visuais usados no perfil (logo Crown Lime, etc.) |
+| [`profile/assets/`](./profile/assets/) | Ativos do perfil; símbolo oficial Y R2 e referência de proveniência |
 | [`SECURITY.md`](./SECURITY.md) | Política de divulgação responsável de vulnerabilidades |
 | [`CODE_OF_CONDUCT.md`](./CODE_OF_CONDUCT.md) | Código de Conduta (Contributor Covenant 2.1 adaptado) |
 | [`CONTRIBUTING.md`](./CONTRIBUTING.md) | Como contribuir nos repositórios públicos |
