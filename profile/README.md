@@ -1,172 +1,84 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/needyuai/.github/main/profile/assets/trustyu-crown-lime.svg" alt="Trustyu" width="112" />
+<img src="https://raw.githubusercontent.com/needyuai/.github/main/profile/assets/trustyu-symbol-y-green.svg" alt="Símbolo oficial Trustyu Y R2" width="112" />
 
-# Trustyu.ai · Tech Human · NeedyU.ai
+# Trustyu.ai · Tech Human · NEEDYU.ai
 
-### Tecnologia com clareza, humanidade e resultado.
+### Soluções AI Native para problemas reais de empresas.
 
-**Unimos especialistas seniores e agentes de IA para transformar problemas reais em software seguro, operável e em uso.**
+**A Trustyu.ai acelera a descoberta, a construção e a evolução de soluções com engenharia experiente, inteligência artificial e reaproveitamento.**
 
-[![Trustyu](https://img.shields.io/badge/Trustyu-AI_squads_%26_products-D8FF57?style=for-the-badge&labelColor=2A2B2D)](https://www.trustyu.ai)
-[![Tech Human](https://img.shields.io/badge/Tech_Human-Diagnóstico_%26_execução-D8FF57?style=for-the-badge&labelColor=2A2B2D)](https://www.techhuman.com.br)
-[![FORGE](https://img.shields.io/badge/FORGE-Engineering_framework-D8FF57?style=for-the-badge&labelColor=2A2B2D)](https://forge.trustyu.ai)
-
-<sub>🇧🇷 Brasil · 🇺🇸 Estados Unidos · Produtos e serviços em português e inglês</sub>
+[![Trustyu](https://img.shields.io/badge/Trustyu-Soluções_AI_Native-DFFF47?style=for-the-badge&labelColor=2A2B2D)](https://www.trustyu.ai)
+[![Tech Human](https://img.shields.io/badge/Tech_Human-Investidora-DFFF47?style=for-the-badge&labelColor=2A2B2D)](https://www.techhuman.com.br)
+[![Forge](https://img.shields.io/badge/Trustyu_Forge-Engenharia_com_IA-DFFF47?style=for-the-badge&labelColor=2A2B2D)](https://forge.trustyu.ai)
 
 </div>
-
----
-
-## Em 10 segundos
-
-Somos um **AI-native company builder**. Construímos SaaS verticais, agentes de IA e produtos de Vertical AI com squads embarcados que respondem pelo resultado — não apenas pelas horas trabalhadas.
-
-- **Tech Human** encontra o gargalo, organiza a decisão e lidera a execução.
-- **Trustyu.ai** transforma visão e conhecimento de domínio em produto e ativo de tecnologia.
-- **NeedyU.ai** converte reuniões, rotinas e conhecimento em memória operacional e produtividade.
-- **FORGE** é o sistema de engenharia que conecta intenção, build, verificação, evidência e aprendizado.
-
-> Não começamos pela ferramenta. Começamos pela dor que precisa virar resultado.
-
----
 
 ## Um ecossistema, papéis claros
 
-| | Papel no ecossistema | Quando faz sentido |
+- **Tech Human** é investidora da Trustyu.ai e da NEEDYU.ai, com atuação própria em estratégia, negócios e transformação.
+- **Trustyu.ai** é uma aceleradora B2B de soluções AI Native. Atua por contratação direta ou co-builder, combinando profissionais responsáveis, IA e recursos reutilizáveis.
+- **NEEDYU.ai** tem marca e produto próprios. Sua V2 está em construção através da Trustyu, em preparação para lançamento, para lembrar o que importa, recuperar contexto e ajudar a decidir, agir e resolver.
+
+B2B define quem compra da Trustyu. As soluções criadas podem atender operações B2B, consumidores B2C ou mercados B2B2C. Software, automação e inteligência fazem parte da solução junto de processos, dados, integrações, adoção e operação.
+
+## Quatro capacidades que trabalham juntas
+
+| Produto | Para que serve | Entrega |
 |---|---|---|
-| **[Tech Human](https://www.techhuman.com.br)** | Diagnóstico, estratégia, CTO/CPO as a Service, dados, IA aplicada e squads especialistas | Quando a operação trava antes da tecnologia ou falta direção para executar |
-| **[Trustyu.ai](https://www.trustyu.ai)** | AI squads, produtos de IA, Vertical SaaS e co-building com fundadores e empresas | Quando existe uma visão ou domínio forte que precisa virar software e outcome |
-| **[NeedyU.ai](https://www.techhuman.com.br/cases/needyu-ai)** | Copiloto de produtividade, reuniões e conhecimento operacional | Quando informação dispersa precisa virar memória, insight e ação |
-| **[FORGE](https://forge.trustyu.ai)** | Framework proprietário de lançamento e engineering harness, com benchmark técnico e evidência públicos | Quando velocidade precisa coexistir com segurança, controle e evidência |
+| **Trustyu Lens** | Entender o problema, comparar alternativas e escolher o que validar | Decisão de solução com evidências, hipóteses e plano de validação |
+| **Trustyu Score** | Avaliar legados complexos e sistemas construídos com IA | Diagnóstico técnico, de produto e negócio, com riscos e caminhos de evolução |
+| **Trustyu Forge** | Conduzir engenharia com IA com julgamento humano | Framework e harness: contexto, arquitetura, controles e evidências |
+| **Trustyu AI Works** | Desenvolver, modernizar e compor soluções | Plataforma de execução e reuso, conforme as capacidades qualificadas |
 
----
+Lens e Score têm valor isolado. Uma decisão pode recomendar ajustar processo, comprar ou integrar uma ferramenta, construir, modernizar gradualmente ou encerrar. Os produtos não são uma sequência obrigatória de compra.
 
-## Da dor ao software em uso
+Contratação direta e co-builder são modalidades. A primeira entrega uma solução para o cliente; a segunda organiza construção conjunta com parceiro de domínio e distribuição, com responsabilidades e eventual participação definidas em contrato.
 
-```mermaid
-flowchart LR
-    A["Dor ou oportunidade"] --> B["Diagnosticar<br/>Tech Human"]
-    B --> C["Decidir<br/>LENS · SCORE · Blueprint"]
-    C --> D["Construir<br/>FORGE + AI Squad"]
-    D --> E["Operar<br/>SaaS · Agentes · Vertical AI"]
-    E --> F["Medir e aprender<br/>Governança + NeedyU"]
-    F --> B
-```
+## Estágio e portfólio
 
-O ciclo é simples de explicar e rigoroso de executar: entender o problema, reduzir a aposta, construir com controles verificáveis, colocar em uso e aprender com a operação real.
-
----
-
-## O que já construímos
-
-### Produtos e soluções
-
-| Maturidade | Ativo | O que entrega |
+| Frente | Estado comunicado | O que esse estado permite afirmar |
 |---|---|---|
-| 🟢 **No ar** | **[NeedyU.ai](https://www.techhuman.com.br/cases/needyu-ai)** | Copiloto de produtividade que centraliza reuniões, conhecimento, rotinas e insights |
-| 🟢 **No ar** | **CRM de Imigração + Agentes** | SaaS vertical com pipeline, atendimento omnichannel e agentes de qualificação, avaliação, notificação e follow-up |
-| 🟢 **Em operação** | **Hub Agents** | Motor multi-tenant que cria, orquestra e publica agentes via REST, WebSocket e SSE para os produtos do ecossistema |
-| 🟢 **Validado** | **[Trustyu SCORE](https://www.trustyu.ai/score)** | Auditoria independente de arquitetura, código, segurança, produto e mercado, com score e roadmap de remediação |
-| 🟢 **Disponível** | **[Trustyu LENS](https://www.trustyu.ai/forge-lens)** | Transforma uma ideia crua em material visual de decisão: oportunidade, mercado, riscos e próximo passo |
-| 🟡 **Product-market fit** | **AI-Native HR** | Prática sênior de pessoas e RH potencializada por IA para tornar a função mais estratégica |
-| 🔬 **R&D / POC** | **Process Intelligence** | Converte entrevistas, transcrições e documentos em processos estruturados, BPMN e specs operacionais |
+| **Lens** | Metodologia e entrega profissional assistida por IA | Material e decisão revisados por profissionais; não avaliação autônoma de mercado |
+| **Score** | Serviço profissional human-led, AI-assisted | Três perspectivas de relatório com evidências; portal, calibração e runtime seguem seus gates |
+| **Forge** | Framework em evolução, com registros públicos de qualificação | Maturidade por controle/capacidade, sem equivalência automática entre documentação e operação |
+| **AI Works** | Plataforma em desenvolvimento e qualificação | Oferta assistida e uso externo dependem do recorte demonstrado; não disponibilidade GA presumida |
+| **NEEDYU V2** | Construção e preparação para lançamento | Evolução e acesso antecipado; não lançamento concluído |
+| **CRM de Imigração / Hub Agents** | Solução vertical e capacidades existentes do ecossistema | Trajetórias próprias; disponibilidade, integrações e resultados precisam do recorte operacional correspondente |
+| **Incenty AI / Parceiros AI** | Produtos em descoberta e preparação documental | Teses e hipóteses em validação; sites não comprovam SaaS operante ou parceiros contratados |
+| **Process Intelligence** | Pesquisa e POC de entendimento de processos | Exploração de BPMN e especificações a partir de fontes autorizadas |
 
-### A plataforma por trás dos produtos
+A NEEDYU V1 pertence ao histórico; o runtime foi encerrado e a landing preservada. V1 e V2 têm estados distintos. Saúde, jurídico, seguros, imobiliário e construção continuam áreas de tese quando não houver produto e uso demonstrados.
 
-| Camada | Capacidade |
-|---|---|
-| **FORGE 3.1** | Seis fases, controles versionados, execução isolada, verificação independente, evidência e aprendizado contínuo. Estado público declarado: **Specified/Shadow** — os contratos existem e são inspecionáveis; enforcement de frota e operação continuam fora do que afirmamos |
-| **Product Foundation** | Multi-tenancy, identidade, billing, internacionalização, observabilidade, CI/CD, segurança e golden paths reutilizáveis |
-| **Hub Agents** | Agentes por domínio, RAG, múltiplos provedores de LLM, canais plugáveis, workers assíncronos e observabilidade |
-| **Human + AI Squad** | Responsabilidade humana, papéis especialistas, agentes executores e verificadores independentes no mesmo fluxo |
+## Engenharia e confiança
 
-Cada produto novo herda a fundação. O domínio muda; os princípios, controles e aprendizados permanecem.
+Profissionais definem intenção, arquitetura, tradeoffs e critérios de aceite. Agentes atuam dentro de escopo, ferramentas e ambientes autorizados. Verificações, revisão, rastreabilidade e recuperação sustentam o que pode ser entregue e afirmado.
 
----
+No [site público do Forge](https://forge.trustyu.ai), consulte [benchmark](https://forge.trustyu.ai/benchmark/), registros de qualificação e evidências com seus limites. Teste, merge, publicação, uso e resultado de negócio são verificações diferentes.
 
-## O que estamos forjando
-
-O portfólio está aberto a novas verticais onde conhecimento profundo de domínio encontra uma oportunidade real de IA:
-
-`Saúde` · `Jurídico` · `Seguros` · `Imobiliário` · `Construção` · `Serviços profissionais`
-
-Hoje, conceitos como **Meddus**, **Advogus**, **Insurus**, **Imobly** e **Construs** representam teses de co-building — não produtos genéricos prontos. Cada vertical nasce com um parceiro de domínio, primeiros usuários e um resultado mensurável.
-
-[Conheça o portfólio e os modelos de parceria →](https://www.trustyu.ai)
-
----
-
-## Como engenhamos confiança
-
-- **Humano accountable** — pessoas definem intenção, risco aceito e decisões irreversíveis.
-- **IA sob contrato** — cada agente atua dentro de escopo, ferramentas e ambiente autorizados.
-- **Verificação independente** — quem executa não é a única autoridade sobre o próprio trabalho.
-- **Evidência antes da afirmação** — testes, scans, evals e receipts sustentam o que declaramos pronto.
-- **Segurança e privacidade por design** — least privilege, isolamento e minimização de dados desde a arquitetura.
-- **Aprendizado que vira sistema** — falhas e reviews retornam como teste, controle, eval ou melhoria reutilizável.
-
-É assim que buscamos velocidade sem transformar confiança em promessa de marketing. **Nada disso é afirmado sem lastro:** o benchmark técnico em [forge.trustyu.ai](https://forge.trustyu.ai/benchmark/) publica as dezessete capacidades com a evidência e o resíduo de cada uma, e declara explicitamente o que ainda **não** podemos afirmar.
-
----
+Recursos reutilizáveis precisam de origem, direitos, versão, compatibilidade e manutenção. Dados e materiais de clientes seguem autorização, minimização e retenção; não são patrimônio reutilizável por default.
 
 ## Por onde começar
 
-| Se você… | Comece aqui |
+| Situação | Próximo passo |
 |---|---|
-| Tem uma dor operacional, mas ainda não sabe qual tecnologia contratar | **[Digital Business Assessment](https://www.techhuman.com.br/servicos/digital-business-assessment)** |
-| Quer entender a maturidade e os riscos do uso de IA na empresa | **[Diagnóstico de Maturidade IA](https://www.techhuman.com.br/maturidade-ia)** |
-| Tem uma ideia e precisa decidir se vale a pena construir | **[Trustyu LENS](https://www.trustyu.ai/forge-lens)** |
-| Já tem um sistema com IA e quer saber se ele está seguro e preparado para crescer | **[Trustyu SCORE](https://www.trustyu.ai/score)** |
-| Tem domínio de mercado e procura um parceiro técnico para co-construir | **[Fale com a Trustyu](https://www.trustyu.ai/get-started)** |
-| Precisa de liderança técnica, produto e squad para executar | **[Veja como a Tech Human atua](https://www.techhuman.com.br/como-atuamos)** |
+| Uma oportunidade precisa virar uma solução | [Conheça a Trustyu e o Lens](https://www.trustyu.ai/forge-lens) |
+| Um legado ou sistema construído com IA precisa evoluir | [Defina uma avaliação Score](https://www.trustyu.ai/score) |
+| O escopo de construção ou modernização já está compreendido | [Converse com a Trustyu](https://www.trustyu.ai/get-started) |
+| Uma equipe quer conhecer engenharia com IA e adoção assistida | [Conheça o Forge](https://forge.trustyu.ai) |
+| O problema principal é estratégia, pessoas e transformação organizacional | [Conheça a Tech Human](https://www.techhuman.com.br) |
+| Informação dispersa precisa de continuidade de contexto | [Acompanhe a evolução da NEEDYU](https://needyu.ai) |
 
----
+## GitHub e contribuições
 
-## GitHub e código aberto
+Grande parte do código é privada por conter ativos próprios, integrações e contexto de clientes. Publicamos o que pode gerar aprendizado com segurança e confidencialidade, incluindo o [site Forge](https://github.com/needyuai/trustyu-jarvis-site) e os [arquivos desta organização](https://github.com/needyuai/.github).
 
-Grande parte do nosso código é privada porque contém propriedade intelectual de produtos, integrações e contexto de clientes. Tornamos público o que pode gerar aprendizado sem comprometer segurança ou confidencialidade.
+Leia o [guia de contribuição](https://github.com/needyuai/.github/blob/main/CONTRIBUTING.md) e o [Código de Conduta](https://github.com/needyuai/.github/blob/main/CODE_OF_CONDUCT.md). Vulnerabilidades usam a [Política de Segurança](https://github.com/needyuai/.github/security/policy), sem issues públicas.
 
-Hoje você pode explorar:
+**Pessoa no centro · Excelência com simplicidade · Alianças justas · Stewardship · Liderança servidora · Generosidade e give back.**
 
-- **[FORGE — site público](https://github.com/needyuai/trustyu-jarvis-site)** — código do site que publica o framework, o benchmark e a evidência.
-- **[Configuração da organização](https://github.com/needyuai/.github)** — arquivos de comunidade, contribuição e segurança.
+[Converse sobre o problema que precisa resolver →](https://www.trustyu.ai/get-started)
 
-E em [**forge.trustyu.ai**](https://forge.trustyu.ai), o que sustenta o que afirmamos:
+Segurança: [security@trustyu.ai](mailto:security@trustyu.ai) · Founder: [Fernando Parreiras](https://fernandoparreiras.com.br)
 
-| O quê | Para quê |
-|---|---|
-| [**Benchmark técnico**](https://forge.trustyu.ai/benchmark/) | Dezessete capacidades com maturidade, evidência e resíduo — mais o corte histórico preservado, sem reescrita |
-| [**Registro de release**](https://forge.trustyu.ai/releases/forge-3.1-rc/) | Qualificação declarada, artefatos de fundação e os gates que faltam para GA |
-| [**Evidence packs**](https://forge.trustyu.ai/references/#fontes) | Quarenta fontes com snapshot, hash e licença; nenhum claim público sem origem rastreável |
-| [**Artigos**](https://forge.trustyu.ai/artigos/) | Conhecimento técnico e de negócio com autoria, revisão factual e fontes declaradas |
-| [**Contratos machine-readable**](https://forge.trustyu.ai/benchmark/forge-31-current-v1.json) | O mesmo corte em JSON, para quem quiser auditar por máquina |
-
-Antes de contribuir, leia o **[guia de contribuição](https://github.com/needyuai/.github/blob/main/CONTRIBUTING.md)** e o **[Código de Conduta](https://github.com/needyuai/.github/blob/main/CODE_OF_CONDUCT.md)**. Vulnerabilidades nunca devem ser abertas em issues públicas: siga a nossa **[Política de Segurança](https://github.com/needyuai/.github/security/policy)**.
-
----
-
-## Princípios inegociáveis
-
-**Pessoa no centro** · **Excelência com simplicidade** · **Alianças justas** · **Stewardship** · **Liderança servidora** · **Generosidade e give back**
-
-Construímos tecnologia para ampliar capacidade humana — com responsabilidade, clareza e compromisso com o resultado que permanece depois da entrega.
-
----
-
-<div align="center">
-
-### Vamos transformar uma dor real em software em uso?
-
-[![Conversar com a Trustyu](https://img.shields.io/badge/Conversar_com_a_Trustyu-D8FF57?style=for-the-badge&labelColor=2A2B2D)](https://www.trustyu.ai/get-started)
-[![Contato Tech Human](https://img.shields.io/badge/contato@techhuman.com.br-D8FF57?style=for-the-badge&labelColor=2A2B2D)](mailto:contato@techhuman.com.br)
-
-<sub>Segurança: <a href="mailto:security@trustyu.ai">security@trustyu.ai</a> · Founder: <a href="https://fernandoparreiras.com.br">Fernando Parreiras</a></sub>
-
-<br/><br/>
-
-<sub><em>“Entrega ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos.”</em> — Provérbios 16:3</sub>
-
-</div>
-
-<!-- Revisão editorial e factual: 2026-08-13 -->
+<!-- Alinhamento institucional: 2026-10-03. Estágios seguem qualificação e atualização por produto. -->
