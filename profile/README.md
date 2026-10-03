@@ -4,7 +4,7 @@
 
 # Trustyu.ai · Tech Human · NEEDYU.ai
 
-### Soluções AI Native para problemas reais de empresas.
+## Soluções AI Native para problemas reais de empresas.
 
 **A Trustyu.ai acelera a descoberta, a construção e a evolução de soluções com engenharia experiente, inteligência artificial e reaproveitamento.**
 
