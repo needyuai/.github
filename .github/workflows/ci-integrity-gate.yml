@@ -17,10 +17,11 @@
 # `workflow_liveness.global_paths` — isenção criada para o gate que reprova DE PROPÓSITO
 # quando falta aprovação humana, e que por tabela escondia o gate que não consegue rodar.
 #
-# O `trustyu-jarvis-site`, o outro repositório público da org, nunca migrou e por isso
-# nunca quebrou (7 sucessos em 15 execuções). Este arquivo faz o mesmo, com o script
-# ATUAL da composite — inclusive a reexecução de vereditos obsoletos, que a versão do
-# jarvis-site não tem.
+# O `trustyu-jarvis-site`, que em 2026-09-02 era o outro repositório público da org,
+# nunca migrou e por isso nunca quebrou (7 sucessos em 15 execuções). Este arquivo faz
+# o mesmo, com o script ATUAL da composite — inclusive a reexecução de vereditos
+# obsoletos, que a versão do jarvis-site não tem. Em 2026-10-30 o jarvis-site já era
+# privado: este é hoje o único repositório público da org.
 #
 # AO EDITAR: a fonte de verdade continua sendo a composite
 # `needyuai/trustyu-infra/.github/actions/ci-integrity-gate`. Mudança de regra vai LÁ
