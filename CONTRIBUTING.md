@@ -37,7 +37,7 @@ Ao enviar uma contribuição, você concorda que ela será licenciada sob os mes
 
 ## Dúvidas
 
-- Comerciais ou de produto → [`contato@trustyu.ai`](mailto:contato@trustyu.ai)
+- Comerciais ou de produto → [`contact@trustyu.ai`](mailto:contact@trustyu.ai)
 - Técnicas sobre um repo específico → abra uma issue no repositório em questão
 - Segurança → [`security@trustyu.ai`](mailto:security@trustyu.ai)
 

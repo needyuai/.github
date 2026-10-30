@@ -25,6 +25,6 @@ A pasta `profile/` é tratada de forma especial: o `profile/README.md` vira a **
 
 ## Contato
 
-- Comercial / parcerias: [`contato@trustyu.ai`](mailto:contato@trustyu.ai)
+- Comercial / parcerias: [`contact@trustyu.ai`](mailto:contact@trustyu.ai)
 - Segurança: [`security@trustyu.ai`](mailto:security@trustyu.ai)
 - Founder: [Fernando Parreiras](https://fernandoparreiras.com.br) · [`parreiras@techhuman.com.br`](mailto:parreiras@techhuman.com.br)
