@@ -20,11 +20,11 @@ Profissionais experientes, inteligência artificial e uma plataforma própria pa
 ## O ecossistema
 
 ```mermaid
-flowchart LR
-    TH["Tech Human<br/>investidora"] -->|investe| T["Trustyu.ai<br/>aceleradora de soluções AI Native"]
+flowchart TB
+    TH["Tech Human<br/>investidora"] -->|investe| T["Trustyu.ai<br/>aceleradora AI Native"]
     TH -->|investe| N["NEEDYU.ai<br/>marca e produto próprios"]
     T -->|desenvolve a V2| N
-    T -->|contratação direta ou co-builder| C["Clientes e parceiros<br/>soluções B2B, B2C e B2B2C"]
+    T -->|direta ou co-builder| C["Clientes e parceiros<br/>B2B · B2C · B2B2C"]
 ```
 
 - **Tech Human** é investidora da Trustyu.ai e da NEEDYU.ai, com atuação própria em estratégia, negócios e transformação organizacional.
