@@ -9,9 +9,13 @@
 # O QUE ISSO CAUSOU (medido em 2026-09-02): a migração para a composite (#4) deixou este
 # gate com 4 execuções e ZERO sucessos, falhando em `Set up job` com
 # `Unable to resolve action needyuai/trustyu-infra, not found`. Como
-# `Revisão humana em CI e governança` é required check no ruleset `main-protect`, o
+# `Revisão humana em CI e governança` era required check no ruleset `main-protect`, o
 # efeito é que TODO PR para a `main` deste repositório ficava permanentemente bloqueado:
 # o check exigido não conseguia sequer reportar.
+#
+# Isso mudou com a ADR-0091 (2026-09-13), que restringiu o check aos repositórios-fundação.
+# Aqui ele roda e reporta, mas não é required: um PR reprovado fica UNSTABLE, não BLOCKED
+# (medido em 2026-11-05: `main-protect` sem required checks e com 0 aprovações).
 #
 # E o auditor não via, porque `ci-integrity-gate.yml` está em
 # `workflow_liveness.global_paths` — isenção criada para o gate que reprova DE PROPÓSITO
@@ -29,9 +33,11 @@
 # consciente — o preço de um repositório público consumir governança privada — e está
 # registrada em trustyu-docs#661.
 #
-# O NOME DO JOB É CONTRATO. Ele vira o nome do status check exigido pelo ruleset
-# (`Revisão humana em CI e governança`). Renomear quebra o `required_status_checks` — o
-# PR passa a ficar BLOCKED com tudo verde, padrão `gate-morto` que o auditor detecta.
+# O NOME DO JOB É CONTRATO. Nos repositórios-fundação ele vira o nome do status check
+# exigido pelo ruleset (`Revisão humana em CI e governança`), e renomear quebra o
+# `required_status_checks` — o PR passa a ficar BLOCKED com tudo verde, padrão `gate-morto`
+# que o auditor detecta. Aqui o check não é required, mas o nome segue igual: é por ele
+# que o auditor reconhece merge com o check reprovado (`gate-bypass`).
 #
 # Ref: ADR-0067 · ADR-0081 (I4) · trustyu-docs#657 · trustyu-docs#661
 
