@@ -10,8 +10,11 @@
 #
 # ATENÇÃO: este arquivo sozinho NÃO bloqueia. `require_code_owner_review` é inócuo com
 # `required_approving_review_count: 0` — verificado em 2026-08-28 (needyuai/trustyu-docs
-# PRs #579/#580 terminaram no mesmo estado `CLEAN`). Quem bloqueia é o status check
-# `CI integrity gate`, obrigatório no ruleset.
+# PRs #579/#580 terminaram no mesmo estado `CLEAN`). Quem bloqueava era o status check
+# `Revisão humana em CI e governança`, obrigatório no ruleset até a ADR-0091 (2026-09-13).
+# Ela restringiu o check aos repositórios-fundação: aqui ele roda e reporta, mas NADA
+# bloqueia o merge (medido em 2026-11-05: `main-protect` sem required checks e com 0
+# aprovações).
 #
 # Ref: ADR-0067 · trustyu-docs/docs/governance/security-posture-review-2026-08.md §3.7
 
